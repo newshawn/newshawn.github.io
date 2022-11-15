@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/03/09/0309%20%E6%8B%86%E5%88%86%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E5%90%88%E5%B9%B6/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-03-09T14:41:00.000Z">
+<meta property="article:modified_time" content="2022-10-22T14:06:34.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="IO">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-0309 拆分文件夹和合并" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/03/09/0309%20%E6%8B%86%E5%88%86%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E5%90%88%E5%B9%B6/" class="article-date">
+  <time class="dt-published" datetime="2022-03-09T14:41:00.000Z" itemprop="datePublished">2022-03-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> IO流;</span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shawnwen</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 创建时间：2022-3-9 20:28:55</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> 文件拆分正确答案</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 大体流程是这样的，先用一个大数组把文件的内容read过去，然后</span></span><br><span class="line"><span class="comment"> * 	算出需要拆分的文件个数，在用循环的方法，对每一个小文件，按照命名，分配数</span></span><br><span class="line"><span class="comment"> * 	组，创建文件的步骤，然后把大数组中的内容部分复制到小数组中，最后write到</span></span><br><span class="line"><span class="comment"> * 	新创建的文件中，创建文件的时候可以用(目录,名字)</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 	合并就是先用for循环try catch，读取小文件到小数组中去，每一次循环都把小数组</span></span><br><span class="line"><span class="comment"> * 	整合到大数组中去，然后循环外一个try catch，把大数组write到新建的文件中</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 	这个过程中用了两个类方法，一个是拆分一个是合并，并且存在许多不足：</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 	1. 	首先fileNumber是表示文件个数的，但是在两个方法中出现了同样的代码，是不是可以</span></span><br><span class="line"><span class="comment"> * 		简化一下，最开始把它当作属性，不管是普通属性还是类属性，都不能直接用，还要再研究</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 	2.  有没有某种方法，可以按名字找出文件夹中的方法，然后设置找到一个加一个，针织可以</span></span><br><span class="line"><span class="comment"> * 		在这个过程中直接读到小数组中去</span></span><br><span class="line"><span class="comment"> *  </span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> class 文件拆分与合并正确答案 &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		 </span><br><span class="line"></span><br><span class="line">		<span class="type">File</span> <span class="variable">f1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:/测试文件.txt&quot;</span>);</span><br><span class="line"><span class="comment">//		splitFiles(f1,2);</span></span><br><span class="line">		merge(f1,<span class="number">2</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">splitFiles</span><span class="params">(File srcFile, <span class="type">int</span> eachSize)</span> &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//创建数组放文件的所有内容</span></span><br><span class="line">		<span class="comment">//这个length是long类型，需要转int</span></span><br><span class="line">		<span class="type">byte</span>[] all = <span class="keyword">new</span> <span class="title class_">byte</span>[(<span class="type">int</span>)(srcFile.length())];</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 先把所有内容读取到数组中</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			</span><br><span class="line">			<span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(srcFile);</span><br><span class="line">			fis.read(all);</span><br><span class="line">			fis.close();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 算出拆分后的文件夹个数</span></span><br><span class="line">		<span class="type">long</span> fileNumber ;</span><br><span class="line">		<span class="keyword">if</span>(srcFile.length()%eachSize==<span class="number">0</span>) &#123;</span><br><span class="line">			fileNumber = srcFile.length()/eachSize;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			fileNumber = srcFile.length()/eachSize+<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;fileNumber;i++) &#123;</span><br><span class="line">			<span class="comment">// 小数组和命名</span></span><br><span class="line">			<span class="type">byte</span>[] each = <span class="keyword">new</span> <span class="title class_">byte</span> [eachSize];</span><br><span class="line">			<span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> srcFile.getName()+<span class="string">&quot;-&quot;</span>+i;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 在本目录下创建文件</span></span><br><span class="line">			<span class="type">File</span> <span class="variable">newFile</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(srcFile.getParent(), name);</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 讨论是不是最后一个</span></span><br><span class="line">			<span class="keyword">if</span>(i!=fileNumber-<span class="number">1</span>) &#123;</span><br><span class="line">				each = Arrays.copyOfRange(all, i*eachSize, (i+<span class="number">1</span>)*eachSize);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				each = Arrays.copyOfRange(all, i*eachSize, all.length);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="comment">// 将小数组的内容写入到小文件中</span></span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(newFile);</span><br><span class="line">				fos.write(each);</span><br><span class="line">				fos.close();</span><br><span class="line">				<span class="comment">//此处得用printf不能用println</span></span><br><span class="line">				System.out.printf(<span class="string">&quot;输出子文件%s，其大小是%d字节%n&quot;</span>,newFile.getName(),newFile.length());</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span>(IOException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(File srcFile,<span class="type">int</span> eachSize)</span> &#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 前面这个是目录，用的应该是字符串，后面是文件名</span></span><br><span class="line">		File fmax= <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:/&quot;</span>,<span class="string">&quot;合并后的文件夹.txt&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 存放小文件和大文件的小数组</span></span><br><span class="line">		<span class="type">byte</span>[] small = <span class="keyword">new</span> <span class="title class_">byte</span> [eachSize];</span><br><span class="line">		<span class="type">byte</span>[] max = <span class="keyword">new</span> <span class="title class_">byte</span> [(<span class="type">int</span>)srcFile.length()];</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//文件数</span></span><br><span class="line">		<span class="type">long</span> fileNumber ;</span><br><span class="line">		<span class="keyword">if</span>(srcFile.length()%eachSize==<span class="number">0</span>) &#123;</span><br><span class="line">			fileNumber = srcFile.length()/eachSize;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			fileNumber = srcFile.length()/eachSize+<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 循环</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;fileNumber; i++)&#123;</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				<span class="type">File</span> <span class="variable">f1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;d:/测试文件.txt-&quot;</span>+i);</span><br><span class="line">				<span class="comment">// 差点忘了，要先弄出一个File对象，刚刚还在想是用文件名还是地址，不知道行不行</span></span><br><span class="line">				<span class="type">FileInputStream</span> <span class="variable">fis</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileInputStream</span>(f1);</span><br><span class="line">				<span class="comment">// 读到这个数组里面，不要急着送过去，判断是不是最后一个，最后一个可能用不满</span></span><br><span class="line">				fis.read(small);</span><br><span class="line">				</span><br><span class="line">				<span class="comment">// 不为最后一个的文件</span></span><br><span class="line">				<span class="keyword">if</span>(i!=fileNumber-<span class="number">1</span>) &#123;</span><br><span class="line"><span class="comment">//					FileOutputStream fos = new FileOutputStream(fmax);</span></span><br><span class="line"><span class="comment">//					不清楚如果每一个都依次写进去会怎么样，这里先用数组存起来</span></span><br><span class="line"><span class="comment">//					fos.write()</span></span><br><span class="line">					<span class="comment">// 原数组，原数组起始位置，目标数组，目标数组起始位置，复制的长度</span></span><br><span class="line">					System.arraycopy(small, <span class="number">0</span> , max, i*eachSize, eachSize);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="comment">//这时所需复制的数组长度，此时i为3，说明前面已经有3组了，只用</span></span><br><span class="line">					<span class="comment">//减去i倍的eachSize就可以了</span></span><br><span class="line">					<span class="type">int</span> <span class="variable">last</span> <span class="operator">=</span> max.length-i*eachSize;</span><br><span class="line">					System.arraycopy(small, <span class="number">0</span>, max, i*eachSize, last);</span><br><span class="line">				&#125;</span><br><span class="line">				fis.close();</span><br><span class="line"><span class="comment">//				FileOutputStream fos = new FileOutputStream(fmax);</span></span><br><span class="line"><span class="comment">//				fos.write(max);</span></span><br><span class="line"><span class="comment">//				fis.close();</span></span><br><span class="line"><span class="comment">//				fos.close();</span></span><br><span class="line"><span class="comment">//				System.out.println(&quot;合成成功&quot;+&quot;文件大小&quot;);</span></span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">catch</span>(IOException e) &#123;</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="type">FileOutputStream</span> <span class="variable">fos</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">FileOutputStream</span>(fmax);</span><br><span class="line">			fos.write(max);</span><br><span class="line">			fos.close();</span><br><span class="line">			System.out.println(<span class="string">&quot;合成成功&quot;</span>+<span class="string">&quot;文件大小为&quot;</span>+fmax.length());</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span>(IOException e) &#123;</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/03/09/0309%20%E6%8B%86%E5%88%86%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E5%90%88%E5%B9%B6/" data-id="claicp8b000077ouf5cp073hc" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IO/" rel="tag">IO</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/11/15/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/" rel="tag">IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-io/" rel="tag">java&#x2F;io</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-io-%E7%BC%96%E7%A0%81/" rel="tag">java&#x2F;io&#x2F;编码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E5%AD%97%E7%AC%A6%E4%B8%B2-StringBuffer/" rel="tag">java&#x2F;字符串&#x2F;StringBuffer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E6%97%A5%E6%9C%9F-java-%E6%8E%92%E5%BA%8F/" rel="tag">java&#x2F;日期 java&#x2F;排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E8%AF%BE%E5%A0%82%E4%BD%9C%E4%B8%9A/" rel="tag">java&#x2F;课堂作业</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/java-io/" style="font-size: 10px;">java/io</a> <a href="/tags/java-io-%E7%BC%96%E7%A0%81/" style="font-size: 10px;">java/io/编码</a> <a href="/tags/java-%E5%AD%97%E7%AC%A6%E4%B8%B2-StringBuffer/" style="font-size: 10px;">java/字符串/StringBuffer</a> <a href="/tags/java-%E6%97%A5%E6%9C%9F-java-%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">java/日期 java/排序</a> <a href="/tags/java-%E8%AF%BE%E5%A0%82%E4%BD%9C%E4%B8%9A/" style="font-size: 10px;">java/课堂作业</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/15/0312%20Java%E5%AD%A6%E4%B9%A0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0310%20%E6%8B%86%E5%88%86%E9%94%99%E8%AF%AF%E8%A7%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0308%20%E5%AF%BB%E6%89%BE%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C%E6%9C%80%E5%B0%8F%E6%96%87%E4%BB%B6/">[object Object]</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0313%20%E6%89%BE%E5%87%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%AF%B9%E5%BA%94%E7%9A%84%E4%B8%AD%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0313%20%E9%9A%8F%E6%9C%BA%E6%97%A5%E6%9C%9F%E6%8E%92%E5%BA%8F/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

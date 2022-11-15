@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="杨辉三角形，主要用来复习二维数组的构建，零或数组的构建。复数类，主要用来构造函数和方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/11/15/0312%20Java%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="杨辉三角形，主要用来复习二维数组的构建，零或数组的构建。复数类，主要用来构造函数和方法。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-15T15:08:05.905Z">
+<meta property="article:modified_time" content="2022-10-22T14:06:39.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="java&#x2F;课堂作业">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-0312 Java学习" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/15/0312%20Java%E5%AD%A6%E4%B9%A0/" class="article-date">
+  <time class="dt-published" datetime="2022-11-15T15:08:05.905Z" itemprop="datePublished">2022-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="杨辉三角形"><a href="#杨辉三角形" class="headerlink" title="杨辉三角形"></a>杨辉三角形</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="comment">// 创建二维数组，灵活数组</span></span><br><span class="line">		<span class="type">int</span>[][] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>][];</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">			<span class="comment">// 给每个二维数组分配空间，i行i个</span></span><br><span class="line">			arr[i]= <span class="keyword">new</span> <span class="title class_">int</span>[i+<span class="number">1</span>];</span><br><span class="line">			arr[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">			arr[i][i]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>; j&lt;arr[i].length-<span class="number">1</span>;j++) &#123;</span><br><span class="line">				arr[i][j]=arr[i-<span class="number">1</span>][j]+arr[i-<span class="number">1</span>][j-<span class="number">1</span>];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;arr[i].length; j++) &#123;</span><br><span class="line">				System.out.print(arr[i][j]+<span class="string">&quot; &quot;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="实现复数类"><a href="#实现复数类" class="headerlink" title="实现复数类"></a>实现复数类</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42449444/article/details/82989917">CSDN链接</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shawnwen</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 创建时间：2022-3-12 16:24:13</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> complex</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Complex</span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		<span class="type">Scanner</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">		<span class="type">double</span> a1,b1,a2,b2;</span><br><span class="line">		a1 = in.nextDouble();</span><br><span class="line">		b1 = in.nextDouble();</span><br><span class="line">		a2 = in.nextDouble();</span><br><span class="line">		b2 = in.nextDouble();</span><br><span class="line">		<span class="type">Complex</span> <span class="variable">c1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Complex</span>(a1,b1);</span><br><span class="line">		<span class="type">Complex</span> <span class="variable">c2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Complex</span>(a2,b2);</span><br><span class="line">		System.out.println(<span class="string">&quot;c1为&quot;</span>+c1.toString());</span><br><span class="line">		System.out.println(<span class="string">&quot;c2为&quot;</span>+c2.toString());</span><br><span class="line">		System.out.println(<span class="string">&quot;c1与c2相乘为:&quot;</span>);</span><br><span class="line">		<span class="type">Complex</span> <span class="variable">c3</span> <span class="operator">=</span> c1.multiply(c2);</span><br><span class="line">		System.out.println(c3.toString());</span><br><span class="line">		System.out.println(<span class="string">&quot;c1除以c2为:&quot;</span>);</span><br><span class="line">		<span class="type">Complex</span> <span class="variable">c4</span> <span class="operator">=</span> c1.divide(c2);</span><br><span class="line">		System.out.println(c4.toString());</span><br><span class="line">		in.close();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">private</span> <span class="type">double</span> a,b;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Complex</span><span class="params">()</span>&#123;</span><br><span class="line">		<span class="built_in">this</span>.a = <span class="number">0.0</span>;</span><br><span class="line">		<span class="built_in">this</span>.b = <span class="number">0.0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="title function_">Complex</span><span class="params">(<span class="type">double</span> a, <span class="type">double</span> b)</span> &#123;</span><br><span class="line">		<span class="built_in">this</span>.a = a;</span><br><span class="line">		<span class="built_in">this</span>.b = b;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 以字符串形式表示负数</span></span><br><span class="line">	<span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(b!=<span class="number">0</span>) &#123;</span><br><span class="line">			<span class="keyword">if</span>(a==<span class="number">0.0</span>) &#123;</span><br><span class="line">				<span class="keyword">return</span> b+<span class="string">&quot;i&quot;</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="keyword">if</span>(b&gt;<span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">return</span> a+<span class="string">&quot;+&quot;</span>+b+<span class="string">&quot;i&quot;</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">return</span> a+<span class="string">&quot;-&quot;</span>+Math.abs(b)+<span class="string">&quot;i&quot;</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> a+<span class="string">&quot;&quot;</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 复数加法</span></span><br><span class="line">	<span class="keyword">public</span> Complex <span class="title function_">add</span><span class="params">(Complex C)</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(C==<span class="literal">null</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;另一个复数不存在&quot;</span>);</span><br><span class="line">			<span class="comment">// 不存在时返回其本身</span></span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Complex</span>(<span class="built_in">this</span>.a+C.a, <span class="built_in">this</span>.b+C.b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 减法</span></span><br><span class="line">	<span class="keyword">public</span> Complex <span class="title function_">minus</span><span class="params">(Complex C)</span>&#123;</span><br><span class="line">		<span class="keyword">if</span>(C==<span class="literal">null</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;另一个复数不存在&quot;</span>);</span><br><span class="line">			<span class="comment">// 不存在时返回其本身</span></span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Complex</span>(<span class="built_in">this</span>.a-C.a, <span class="built_in">this</span>.b-C.b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 乘法</span></span><br><span class="line">	<span class="keyword">public</span> Complex <span class="title function_">multiply</span><span class="params">(Complex C)</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(C==<span class="literal">null</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;另一个复数不存在&quot;</span>);</span><br><span class="line">			<span class="comment">// 不存在时返回其本身</span></span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">double</span> <span class="variable">d</span> <span class="operator">=</span> <span class="built_in">this</span>.a*C.a-<span class="built_in">this</span>.b*C.b;</span><br><span class="line">		<span class="type">double</span> <span class="variable">e</span> <span class="operator">=</span> <span class="built_in">this</span>.a*C.b+<span class="built_in">this</span>.b*C.a;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Complex</span>(d,e);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 除法</span></span><br><span class="line">	<span class="keyword">public</span> Complex <span class="title function_">divide</span><span class="params">( Complex C )</span> &#123;</span><br><span class="line">		<span class="keyword">if</span>(C==<span class="literal">null</span>) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;另一个复数不存在&quot;</span>);</span><br><span class="line">			<span class="comment">// 不存在时返回其本身</span></span><br><span class="line">			<span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="type">double</span> <span class="variable">d</span> <span class="operator">=</span> (<span class="built_in">this</span>.a*C.a + <span class="built_in">this</span>.b*C.b) / (C.a*C.a + C.b*C.b);</span><br><span class="line">		<span class="type">double</span> <span class="variable">e</span> <span class="operator">=</span> (<span class="built_in">this</span>.b*C.a - <span class="built_in">this</span>.a*C.b) / (C.a*C.a + C.b*C.b);</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Complex</span>(d,e);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/15/0312%20Java%E5%AD%A6%E4%B9%A0/" data-id="claicp8ay00047oufgufg9b0d" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-%E8%AF%BE%E5%A0%82%E4%BD%9C%E4%B8%9A/" rel="tag">java&#x2F;课堂作业</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/11/15/0310%20%E6%8B%86%E5%88%86%E9%94%99%E8%AF%AF%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/" rel="tag">IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-io/" rel="tag">java&#x2F;io</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-io-%E7%BC%96%E7%A0%81/" rel="tag">java&#x2F;io&#x2F;编码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E5%AD%97%E7%AC%A6%E4%B8%B2-StringBuffer/" rel="tag">java&#x2F;字符串&#x2F;StringBuffer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E6%97%A5%E6%9C%9F-java-%E6%8E%92%E5%BA%8F/" rel="tag">java&#x2F;日期 java&#x2F;排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E8%AF%BE%E5%A0%82%E4%BD%9C%E4%B8%9A/" rel="tag">java&#x2F;课堂作业</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/java-io/" style="font-size: 10px;">java/io</a> <a href="/tags/java-io-%E7%BC%96%E7%A0%81/" style="font-size: 10px;">java/io/编码</a> <a href="/tags/java-%E5%AD%97%E7%AC%A6%E4%B8%B2-StringBuffer/" style="font-size: 10px;">java/字符串/StringBuffer</a> <a href="/tags/java-%E6%97%A5%E6%9C%9F-java-%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">java/日期 java/排序</a> <a href="/tags/java-%E8%AF%BE%E5%A0%82%E4%BD%9C%E4%B8%9A/" style="font-size: 10px;">java/课堂作业</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/15/0312%20Java%E5%AD%A6%E4%B9%A0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0310%20%E6%8B%86%E5%88%86%E9%94%99%E8%AF%AF%E8%A7%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0308%20%E5%AF%BB%E6%89%BE%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C%E6%9C%80%E5%B0%8F%E6%96%87%E4%BB%B6/">[object Object]</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0313%20%E6%89%BE%E5%87%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%AF%B9%E5%BA%94%E7%9A%84%E4%B8%AD%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0313%20%E9%9A%8F%E6%9C%BA%E6%97%A5%E6%9C%9F%E6%8E%92%E5%BA%8F/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

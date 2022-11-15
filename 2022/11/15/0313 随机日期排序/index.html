@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="涉及日期格式化和排序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2022/11/15/0313%20%E9%9A%8F%E6%9C%BA%E6%97%A5%E6%9C%9F%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="涉及日期格式化和排序">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-15T15:08:05.861Z">
+<meta property="article:modified_time" content="2022-10-22T14:06:39.000Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="java&#x2F;日期 java&#x2F;排序">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-0313 随机日期排序" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/11/15/0313%20%E9%9A%8F%E6%9C%BA%E6%97%A5%E6%9C%9F%E6%8E%92%E5%BA%8F/" class="article-date">
+  <time class="dt-published" datetime="2022-11-15T15:08:05.861Z" itemprop="datePublished">2022-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> 时间与日期;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.text.ParseException;</span><br><span class="line"><span class="keyword">import</span> java.text.SimpleDateFormat;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> shawnwen</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 创建时间：2022-3-13 16:24:36</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span> 随机日期排序</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span> 使用1970年-2000年之间的随机日期初始化该数组</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> class 随机日期排序 &#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line">		Date[] d = <span class="keyword">new</span> <span class="title class_">Date</span>[<span class="number">9</span>];</span><br><span class="line">		<span class="type">long</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">978278399000L</span>;</span><br><span class="line">		System.out.println(<span class="string">&quot;原始数据：\n&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">9</span>; i++) &#123;</span><br><span class="line">			<span class="comment">// 这里long后面需要括号括起来，不然long直接对应随机数，随机数直接为0了</span></span><br><span class="line">			d[i] = <span class="keyword">new</span> <span class="title class_">Date</span>((<span class="type">long</span>)(Math.random()*max));</span><br><span class="line">			System.out.println(d[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 冒泡排序</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">9</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="type">int</span> j=i+<span class="number">1</span>; j&lt;<span class="number">9</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span>(d[i].getTime()&gt;d[j].getTime()) &#123;</span><br><span class="line">					<span class="comment">// 交换部分，没想到</span></span><br><span class="line">					<span class="type">Date</span> <span class="variable">t</span> <span class="operator">=</span> d[i];</span><br><span class="line">					d[i] = d[j];</span><br><span class="line">					d[j] = t;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 输出排序后所得到的date</span></span><br><span class="line">		System.out.println(<span class="string">&quot;\n排序后\n&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(Date dd:d) &#123;</span><br><span class="line">			System.out.println(dd);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 格式化为字符串</span></span><br><span class="line">		String[] str = <span class="keyword">new</span> <span class="title class_">String</span>[<span class="number">9</span>];</span><br><span class="line">		<span class="type">SimpleDateFormat</span> <span class="variable">sdf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SimpleDateFormat</span>(<span class="string">&quot;yyyy-MM-dd&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;<span class="number">9</span>; i++) &#123;</span><br><span class="line">			str[i] = sdf.format(d[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//输出字符串</span></span><br><span class="line">		System.out.println(<span class="string">&quot;\n格式化之后：\n&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span>(String s :str) &#123;</span><br><span class="line">			System.out.println(s);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/11/15/0313%20%E9%9A%8F%E6%9C%BA%E6%97%A5%E6%9C%9F%E6%8E%92%E5%BA%8F/" data-id="claicp8b100087ouffqf15ol2" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java-%E6%97%A5%E6%9C%9F-java-%E6%8E%92%E5%BA%8F/" rel="tag">java&#x2F;日期 java&#x2F;排序</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/11/15/0313%20%E6%89%BE%E5%87%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%AF%B9%E5%BA%94%E7%9A%84%E4%B8%AD%E6%96%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/11/15/0313%20StringBuffer%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IO/" rel="tag">IO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-io/" rel="tag">java&#x2F;io</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-io-%E7%BC%96%E7%A0%81/" rel="tag">java&#x2F;io&#x2F;编码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E5%AD%97%E7%AC%A6%E4%B8%B2-StringBuffer/" rel="tag">java&#x2F;字符串&#x2F;StringBuffer</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E6%97%A5%E6%9C%9F-java-%E6%8E%92%E5%BA%8F/" rel="tag">java&#x2F;日期 java&#x2F;排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-%E8%AF%BE%E5%A0%82%E4%BD%9C%E4%B8%9A/" rel="tag">java&#x2F;课堂作业</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/IO/" style="font-size: 10px;">IO</a> <a href="/tags/java-io/" style="font-size: 10px;">java/io</a> <a href="/tags/java-io-%E7%BC%96%E7%A0%81/" style="font-size: 10px;">java/io/编码</a> <a href="/tags/java-%E5%AD%97%E7%AC%A6%E4%B8%B2-StringBuffer/" style="font-size: 10px;">java/字符串/StringBuffer</a> <a href="/tags/java-%E6%97%A5%E6%9C%9F-java-%E6%8E%92%E5%BA%8F/" style="font-size: 10px;">java/日期 java/排序</a> <a href="/tags/java-%E8%AF%BE%E5%A0%82%E4%BD%9C%E4%B8%9A/" style="font-size: 10px;">java/课堂作业</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/11/">November 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/15/0312%20Java%E5%AD%A6%E4%B9%A0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0310%20%E6%8B%86%E5%88%86%E9%94%99%E8%AF%AF%E8%A7%A3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0308%20%E5%AF%BB%E6%89%BE%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%A7%E5%92%8C%E6%9C%80%E5%B0%8F%E6%96%87%E4%BB%B6/">[object Object]</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0313%20%E6%89%BE%E5%87%BA%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%AF%B9%E5%BA%94%E7%9A%84%E4%B8%AD%E6%96%87/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/15/0313%20%E9%9A%8F%E6%9C%BA%E6%97%A5%E6%9C%9F%E6%8E%92%E5%BA%8F/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
