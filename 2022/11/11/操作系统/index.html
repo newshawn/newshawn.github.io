@@ -1,0 +1,1010 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Shawn Wen">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="这是本人自学操作系统的笔记，书都没看，直接上手王道考研的网课，先过一遍知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="王道操作系统笔记">
+<meta property="og:url" content="http://example.com/2022/11/11/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="这是本人自学操作系统的笔记，书都没看，直接上手王道考研的网课，先过一遍知识点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111100303.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111100915.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111100702.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111102257.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101312.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101422.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101657.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101751.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101817.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101917.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111102140.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111102852.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103227.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103449.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103536.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103558.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103746.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103934.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111104054.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111104353.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105109.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105708.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105729.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105748.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105802.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105953.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111110325.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114100803.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114100953.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114101032.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114114636.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114114941.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115049.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115213.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115527.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114120624.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115827.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115948.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114120433.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114120354.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114120414.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114121222.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114121255.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114121347.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114122322.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114122504.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114122602.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114122829.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114123212.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114123344.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114124125.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114124511.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114150947.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151052.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151147.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151437.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151605.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151635.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114152439.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114152642.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114192613.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114194917.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114195114.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114195726.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114200053.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114205355.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114205026.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114205124.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114210646.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114211029.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114213342.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114213515.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114213544.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114213932.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114215225.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114215343.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114215903.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115091016.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115091634.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115092949.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115093425.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116094749.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116095823.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115101105.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116101236.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116102219.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116102854.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116104520.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116110547.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116115831.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116120349.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116120512.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116120623.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116121931.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116122347.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116122632.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116122828.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116164949.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116164140.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116165832.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116172204.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116172141.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116172853.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116173611.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116173852.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116174348.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116182725.png">
+<meta property="og:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116183153.png">
+<meta property="article:published_time" content="2022-11-11T02:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-16T14:53:33.558Z">
+<meta property="article:author" content="Shawn Wen">
+<meta property="article:tag" content="操作系统">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111100303.png">
+  
+  
+  
+  <title>王道操作系统笔记 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="王道操作系统笔记"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-11 10:00" pubdate>
+          2022年11月11日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          11k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          89 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">王道操作系统笔记</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>这是本人自学操作系统的笔记，书都没看，直接上手王道考研的网课，先过一遍知识点</p>
+<span id="more"></span>
+
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111100303.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111100915.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111100702.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="1-1-2-操作系统的特性"><a href="#1-1-2-操作系统的特性" class="headerlink" title="1.1.2 操作系统的特性"></a>1.1.2 操作系统的特性</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111102257.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（一）并发"><a href="#（一）并发" class="headerlink" title="（一）并发"></a>（一）并发</h3><p>微观上也有可能在同时共享资源，比如玩游戏听歌，一边游戏音效，一边听音乐。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101312.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（二）-共享"><a href="#（二）-共享" class="headerlink" title="（二） 共享"></a>（二） 共享</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101422.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101657.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（三）虚拟"><a href="#（三）虚拟" class="headerlink" title="（三）虚拟"></a>（三）虚拟</h3><p> <img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101751.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101817.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111101917.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（四）异步"><a href="#（四）异步" class="headerlink" title="（四）异步"></a>（四）异步</h3><p>一号占用老渣的心，但是心只有一颗，当二号要的时候就阻塞了，得等 1 号用完。如果失去了并发性，意味着老渣一天之内只需要处理 1 号的指令，也就不会有异步性。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111102140.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="1-1-3-操作系统的发展与分类"><a href="#1-1-3-操作系统的发展与分类" class="headerlink" title="1.1.3 操作系统的发展与分类"></a>1.1.3 操作系统的发展与分类</h2><p> <img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111102852.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103227.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="1-1-4-操作系统的运行机制和体系结构"><a href="#1-1-4-操作系统的运行机制和体系结构" class="headerlink" title="1.1.4 操作系统的运行机制和体系结构"></a>1.1.4 操作系统的运行机制和体系结构</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103449.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103536.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103558.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h4 id="操作系统的内核"><a href="#操作系统的内核" class="headerlink" title="操作系统的内核"></a>操作系统的内核</h4><p>内核是最接近硬件的一部分，是操作系统最基本最核心的部分，实现操作系统内核功能的程序就是内核程序。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103746.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111103934.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>大内核和微内核，很多事情都规定在大内核中，而微内核中只保留了一些基本的功能。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111104054.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111104353.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="1-1-5-中断和异常"><a href="#1-1-5-中断和异常" class="headerlink" title="1.1.5 中断和异常"></a>1.1.5 中断和异常</h2><h3 id="（一）中断机制的诞生"><a href="#（一）中断机制的诞生" class="headerlink" title="（一）中断机制的诞生"></a>（一）中断机制的诞生</h3><p>为了解决早期计算机资源利用率低的问题，人们发明了操作系统，并且引入了中断机制，实现了多道程序并发执行。</p>
+<h3 id="（二）中断的概念和作用"><a href="#（二）中断的概念和作用" class="headerlink" title="（二）中断的概念和作用"></a>（二）中断的概念和作用</h3><p><strong>本质</strong>：<strong>发生中断</strong>意味着<strong>操作系统介入，开展管理工作</strong>。</p>
+<p>以下的操作可以归纳为：不论是用户进程还是 io 设备，完成时发出中断信号或者是进程到一半需要调用 io 设备而发出内中断信号，都是由 cpu 接受信号，然后 cpu 切换为核心态，由操作系统接管 cpu，然后操作系统读取中断信号，做出对应的处理，然后再将 cpu 还给用户进程继续操作。</p>
+<ol>
+<li>中断发生时， cpu <strong>立即进入核心态</strong></li>
+<li>中断发生胡，当前进程停止进行，由操作系统对中断进行处理</li>
+<li>对于不同的中断信号会有不同的处理</li>
+<li>发生了中断就意味着操作系统的介入，开展管理工作，由于操作系统的管理工作（比如进程切换、分配 IO 设备等），需要使用特权指令，因此 cpu 需要切换为核心态。因而中断可以使操作系统获得计算机的控制权，有了中断，才能实现多道程序并发执行。</li>
+</ol>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105109.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>多个程序放入内存并发执行。刚开始进程 1 在用户态下运行一段时间，CPU 可能会收到计时部件（一个用于计时的硬件设备）发出的<strong>中断信号</strong>，通知 CPU 时间已经过了一个时间片了。CPU 收到中断信号后，就意味着要操作系统介入开始管理工作，因此 cpu 会立即切换到核心态，并将 cpu 的使用权限交给操作系统，操作系统的内核就会对刚才的中断信号进行处理，操作系统发现中断信号告诉他时间片已到，就会决定，接下来要换进程 2 运行。完成这一系列的管理工作后，操作系统会将 cpu 的使用权交还给用户进程，接下来进程 2 就会在用户态下开始执行。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105708.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>输入输出操作对应的指令的特权指令，不允许用户进程直接使用，需要通过系统调用，发出内中断信号主动要求操作系统介入，让操作系统来进行输入输出操作，然后 CPU 就会切换为核心态，操作系统接管请求，要求打印机开始工作。进程 2 需要等待 io 结束再继续运行，于是操作系统就让进程2 暂停运行让进程 3 开始工作，然后又会再次把 cpu 的使用权还给用户进程，然后进程 3 开始工作，并且将此时打印机也并行工作。然后当打印机输出完成后，就会发送一个 io 完成的中断信号给 cpu，这时 cpu 又切换为核心态，让操作系统接管 cpu，操作系统发现 io 已经结束了，就让接下来由进程 2 运行，于是又把 cpu 是使用权还给用户进程，进程 2 开始运行。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105729.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105748.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105802.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>核心态下本来就可以执行特权指令，只需要执行一个设置程序状态字的一个特权指令就可以切换回用户态了。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111105953.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（二）中断的分类"><a href="#（二）中断的分类" class="headerlink" title="（二）中断的分类"></a>（二）中断的分类</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221111110325.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>打印机完成输出后向 cpu 发送一个中断信号，属于外部中断。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114100803.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（三）外中断的处理过程"><a href="#（三）外中断的处理过程" class="headerlink" title="（三）外中断的处理过程"></a>（三）外中断的处理过程</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114100953.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114101032.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="1-1-6-系统调用"><a href="#1-1-6-系统调用" class="headerlink" title="1.1.6 系统调用"></a>1.1.6 系统调用</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114114636.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="系统调用背后的过程"><a href="#系统调用背后的过程" class="headerlink" title="系统调用背后的过程"></a>系统调用背后的过程</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114114941.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115049.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115213.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>发出系统调用请求是 int x 指令，发生在用户态。因为陷入指令是让 cpu 从用户态进入到核心态，所以在核心态下无法执行，核心态下一般可以执行特权指令和非特权指令。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115527.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h1 id="第二章-进程"><a href="#第二章-进程" class="headerlink" title="第二章 进程"></a>第二章 进程</h1><h2 id="2-1-1-进程的定义、组成、组织方式、特征"><a href="#2-1-1-进程的定义、组成、组织方式、特征" class="headerlink" title="2.1.1 进程的定义、组成、组织方式、特征"></a>2.1.1 进程的定义、组成、组织方式、特征</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114120624.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115827.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114115948.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（三）进程的组织"><a href="#（三）进程的组织" class="headerlink" title="（三）进程的组织"></a>（三）进程的组织</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114120433.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114120354.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114120414.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（四）进程的特征"><a href="#（四）进程的特征" class="headerlink" title="（四）进程的特征"></a>（四）进程的特征</h3><h2 id="2-1-2-进程的状态与转换"><a href="#2-1-2-进程的状态与转换" class="headerlink" title="2.1.2 进程的状态与转换"></a>2.1.2 进程的状态与转换</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114121222.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>处于就绪态的进程由于没有分配到处理器资源，因此不能发出一些主动的行为，则就绪态不能<br>转换为阻塞态。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114121255.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="2-1-3-进程控制"><a href="#2-1-3-进程控制" class="headerlink" title="2.1.3 进程控制"></a>2.1.3 进程控制</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114121347.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>实现进程控制，需要修改 PCB 内容中的标志位，并且把 PCB 移动到相应的队列，通过指针的方式。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114122322.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114122504.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114122602.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114122829.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="2-1-4-进程通信"><a href="#2-1-4-进程通信" class="headerlink" title="2.1.4 进程通信"></a>2.1.4 进程通信</h2><p>指进程之间的信息交换。为了保证安全一个进程不能直接访问另一个进程的地址空间。如手机上的照片分享到微信时，这两个是不同的进程，转发图片需要他们之间的通信，则需要操作系统提供的一些方法。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114123212.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114123344.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="2-1-5-线程概念和多线程模型"><a href="#2-1-5-线程概念和多线程模型" class="headerlink" title="2.1.5 线程概念和多线程模型"></a>2.1.5 线程概念和多线程模型</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114124125.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p> 切换进程之间的运行环境可以比喻为图书馆里的座位。有一个位置，你走了另一个不认识的人来，就得你把书拿走，他把自己的书放上来，相当于换了个环境，但是如果是你的室友来了，你的书可以继续放着，因为都认识，你和室友就对应这同一个进程里的不同线程</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114124511.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="线程的实现方式"><a href="#线程的实现方式" class="headerlink" title="线程的实现方式"></a>线程的实现方式</h3><p>分为内核级线程和用户级线程。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114150947.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151052.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151147.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="多线程模型"><a href="#多线程模型" class="headerlink" title="多线程模型"></a>多线程模型</h3><p>在同时支持用户级线程和内核级线程的系统中，由几个用户级线程映射到几个内核级线程的问题引发出多线程模型的问题。分为多对一、一对一、多对多三种。内核级线程才是处理机的分配单位。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151437.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151605.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114151635.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="2-2-1-处理机调度的概念"><a href="#2-2-1-处理机调度的概念" class="headerlink" title="2.2.1 处理机调度的概念"></a>2.2.1 处理机调度的概念</h2><h3 id="（一）基本概念"><a href="#（一）基本概念" class="headerlink" title="（一）基本概念"></a>（一）基本概念</h3><p>当有一堆任务要处理，由于资源有限，事情没法同时处理，此时就需要确定某种规则来决定处理任务的顺序，这就是调度研究的问题。</p>
+<p>在多道程序系统中，进程的数量往往是多于处理机的个数的，不可能同时地并行处理各个进程。处理机的调度，就是从就绪队列中按照一定的算法，选择一个进程并将处理机分配给他运行，以实现进程的并发执行。</p>
+<h3 id="（二）三个层次-高级调度"><a href="#（二）三个层次-高级调度" class="headerlink" title="（二）三个层次-高级调度"></a>（二）三个层次-高级调度</h3><p>又称为作业调度。用户会通过外围机等外围的输入设备把作业输入到一个更高速的磁盘或者硬盘这样的外层空间上（外存），但是内存的地址空间是有限的，不能把所有的作业都放进去，所以需要进行调度，来决定将作业调入内存的顺序。</p>
+<p>按照一定的原则从外存上处于后备队列的作业中挑选一个或多个作业，给他们分配内存等必要资源，并<strong>建立相应的进程</strong>（建立 PCB），以使得它们<strong>获得竞争处理机的权利</strong>。</p>
+<p>因此高级调度是外存和内存之间的一个调度，并且每个作业只能调度一次，刚开始调入，运行结束调出，调入时会建立对应的 PCB，调出时才撤销 PCB，高级调度主要解决的时调入问题，因为只有调入时机需要操作系统决定，但调出的时机必然是作业运行结束才调出。</p>
+<h3 id="（三）三个层次-中级调度"><a href="#（三）三个层次-中级调度" class="headerlink" title="（三）三个层次-中级调度"></a>（三）三个层次-中级调度</h3><p>又称为内存调度。引入虚拟存储技术，可以将暂时不运行的进程，把它相关的一些数据调至外存等待，等它重新具备运行条件且内存又稍有空闲时，再重新调入内存，这么做可以<strong>提高内存利用率和系统吞吐量</strong>。尽可能的保证当前处于内存中的进程都是可以运行的进程。</p>
+<p>暂时调到外存等待的进程状态称为<strong>挂起状态</strong>，但是 <strong>PCB 不会一起调到外存，而是会常驻内存</strong>。PCB 会记录进程数据在外存中的存放位置，进程状态等信息，操作系统通过内存中的 PCB 来保持对各个进程的监控、管理。<strong>被挂起的进程的 PCB 会被放到挂起队列中</strong>，这个挂起队列就有点类似于之前处于就绪态的进程组成一个就绪队列。</p>
+<p>中级调度，就是<strong>决定将哪个处于挂起状态的进程重新调入内存</strong>。一个进程可能被多次调出调入内存，因此频率比高级调度高得多。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114152439.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（四）三个层次-低级调度"><a href="#（四）三个层次-低级调度" class="headerlink" title="（四）三个层次-低级调度"></a>（四）三个层次-低级调度</h3><p>低级调度也被称为进程调度，就是按照某种方法和策略从就绪队列中选择一个进程，将处理机分配给它。调度发生在 <strong>内存-&gt;CPU</strong> 它是实现进程并发运行的一个基础，时操作系统最基本的一种调度，频率很高，一半几十毫秒一次。对进程状态的影响是从<strong>就绪态-&gt;运行态</strong></p>
+<h3 id="（五）三个调度的联系、对比"><a href="#（五）三个调度的联系、对比" class="headerlink" title="（五）三个调度的联系、对比"></a>（五）三个调度的联系、对比</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114152642.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="2-2-2-进程调度的时机"><a href="#2-2-2-进程调度的时机" class="headerlink" title="2.2.2 进程调度的时机"></a>2.2.2 进程调度的时机</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114192613.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h2 id="2-2-3-调度算法的评价指标"><a href="#2-2-3-调度算法的评价指标" class="headerlink" title="2.2.3 调度算法的评价指标"></a>2.2.3 调度算法的评价指标</h2><p><strong>利用率</strong> ：忙碌的时间 &#x2F; 总时间</p>
+<p><strong>系统吞吐量</strong>：单位时间内完成的作业的数量。</p>
+<p><strong>周转时间</strong>：作业提交给系统开始，到作业完成为止的时间间隔。</p>
+<p><strong>带权周转时间</strong>：作业周转时间&#x2F;作业实际运行时间。带权周转时间越小，用户满意度更高。比如说两个人做一件事都用了 11 分钟，但一个人排队 10 分钟，做事 1 分钟，另一个人排队 1 分钟，做事 10 分钟，做事 10 分钟的带权周转时间更小，满意度更高。</p>
+<p><strong>响应时间</strong> ：指用户提交请求到首次产生响应所用的时间 ^21eef8</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114194917.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>后备队列是在外存中的，就绪队列是在内存中的。</p>
+<h2 id="2-2-4-FCFS、SJF、HRRN-调度算法"><a href="#2-2-4-FCFS、SJF、HRRN-调度算法" class="headerlink" title="2.2.4  FCFS、SJF、HRRN 调度算法"></a>2.2.4  FCFS、SJF、HRRN 调度算法</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114195114.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（一）先来先服务-FCFS"><a href="#（一）先来先服务-FCFS" class="headerlink" title="（一）先来先服务 FCFS"></a>（一）先来先服务 FCFS</h3><p>First Come First Serve</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114195726.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<h3 id="（二）非抢占式的短作业优先-SJF"><a href="#（二）非抢占式的短作业优先-SJF" class="headerlink" title="（二）非抢占式的短作业优先 SJF"></a>（二）非抢占式的短作业优先 SJF</h3><p>Shortest Job First，每次调度时选择<strong>当前已经到达并且运行时间最短</strong>的作业。相比 FCFS 算法，平均等待&#x2F;周转&#x2F;带权周转</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114200053.png" srcset="/img/loading.gif" lazyload alt="|400"></p>
+<p>注意以下的小细节：</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114205355.png" srcset="/img/loading.gif" lazyload alt="|600"></p>
+<p><strong>优点</strong>：“最短的” 平均等待时间、平均周转时间（实际上没有抢占式的短，所以这里加引号）</p>
+<p><strong>缺点</strong>：不公平，对短作业有利，对长作业不利，如果就绪队列中有源源不断的短作业到来的话，<strong>可能会产生长作业饥饿现象</strong>。另外作业&#x2F;进程的运行时间是由用户提供的，用户可以自己提交数据把时间写的很短，并不一定真实，不一定能做到真正的短作业优先。</p>
+<h3 id="（三）抢占式的短作业优先算法-SRTN"><a href="#（三）抢占式的短作业优先算法-SRTN" class="headerlink" title="（三）抢占式的短作业优先算法 SRTN"></a>（三）抢占式的短作业优先算法 SRTN</h3><p>又称最短剩余时间优先算法（SRTN，shortest remaining time next）。每当有进程加入就绪队列时就需要调度，如果<strong>新到达的进程的剩余时间比当前运行的进程的剩余时间更短</strong>，则又新进程抢占处理机，当前运行进程重新回到就绪队列。当前进程主动放弃处理机的时候，也就是它正常完成的时候，也需要调度算法来进行调度，<em>因此当一个进程完成时也需要调度</em>。 <em>这是为什么？</em> 好像明白了，进程完成时需要调度来选择就绪态的进程分配处理机。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114205026.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p>相比其他两种，抢占式的短作业有限算法的几个指标更低。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114205124.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<h3 id="（四）高响应比有限算法-HRRN"><a href="#（四）高响应比有限算法-HRRN" class="headerlink" title="（四）高响应比有限算法 HRRN"></a>（四）高响应比有限算法 HRRN</h3><p>Highest Response Ratio Next。</p>
+<p>FCFS 算法不考虑作业的运行时间，对短作业不友好；SJF 算法完全不考虑各个作业的等待时间，长作业可能一直等待，可能会造成长作业的饥饿问题，因此需要一种算法，能够兼顾各个作业的等待时间和运行时间。</p>
+<p><strong>算法思想</strong>：要综合考虑作业&#x2F;线程的等待时间和要求服务时间。</p>
+<p><strong>算法规则</strong>：每次调度时先计算各个作业&#x2F;线程的<strong>响应比</strong>，选择<strong>响应比高</strong>的作业&#x2F;进程为其服务。</p>
+<p><strong>响应比</strong> &#x3D; （等待时间+要求服务时间）&#x2F; 要求服务时间</p>
+<p><strong>是否可抢占</strong>：非抢占式算法，只有主动放弃处理机时才需要调度，才需要计算响应比。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114210646.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p><strong>优缺点</strong>：对于长作业来说，等待时间越来越就，响应比也会越来越大从而避免了长作业饥饿的问题。要求服务时间相同时，等待越久的有限；等待时间相同时，要求服务时间短的优先。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114211029.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<h2 id="2-2-5-调度算法：时间片轮转、有点急调度、多级反馈队列"><a href="#2-2-5-调度算法：时间片轮转、有点急调度、多级反馈队列" class="headerlink" title="2.2.5 调度算法：时间片轮转、有点急调度、多级反馈队列"></a>2.2.5 调度算法：时间片轮转、有点急调度、多级反馈队列</h2><ol>
+<li>算法思想</li>
+<li>算法规则</li>
+<li>用于作业调度还是进程调度</li>
+<li>抢占式还是非抢占式</li>
+<li>优缺点</li>
+<li>是否会导致饥饿</li>
+</ol>
+<h3 id="（一）时间片轮转调度算法"><a href="#（一）时间片轮转调度算法" class="headerlink" title="（一）时间片轮转调度算法"></a>（一）时间片轮转调度算法</h3><p>RR，Round-Robin。</p>
+<p><strong>算法思想</strong>：公平地、轮流地为各个进程服务，让每个进程在一定时间内都可以得到响应</p>
+<p><strong>算法规则</strong>：按照各进程到达就绪队列的顺序，轮流让各个进行执行一个时间片（如 100 ms），若进程未在一个时间片内执行完，则剥夺处理机，<strong>将进程重新放到就绪队列队尾重新排队</strong>。</p>
+<p><strong>用于作业&#x2F;进程调度</strong>：用于进程调度，只有作业放入内存建立了相应的进程后才能被分配处理机时间片。</p>
+<p><strong>是否可抢占</strong>：因为时间片内为运行完，就会被强行剥夺处理机使用权，所以属于<strong>抢占式</strong>的算法。由时钟装置发出的<strong>时钟中断</strong>来通知 CPU 时间已到。</p>
+<p>时间片轮转调度算法常用于分时操作系统，更注重响应时间，因此不计算周转时间。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114213342.png" srcset="/img/loading.gif" lazyload alt="|700 "></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114213515.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114213544.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114213932.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p>可以发现，时间片大小为 5 时，和先来先服务调度算法差不多。因此如果<strong>时间片太大</strong>，每个进程都可以在一个时间片内完成，就会<strong>退化为先来先服务算法</strong>，并且会<strong>增大进程</strong>[[操作系统#^21eef8|响应时间]]（进程提交到就绪队列后需要等待很长时间才能响应，假设前面四个运行时间都要 5，时间片也为 5，第五个进程就需要等 20 个时间单位，如果时间片是 2，前面四个运行 2 个时间单位就会轮换，只需要 8 个时间单位就到第五个线程），因此时间片不能太大。</p>
+<p>如果时间片太小，就会<strong>切换频繁</strong>，系统花费大量时间来处理进程切换，从而导致进程执行的时间比例减小，因此时间片也不能太小。</p>
+<p><strong>优点</strong>：公平，响应快，适合分时操作系统；不会导致饥饿<br><strong>缺点</strong>：高频率的进程切换，有一点开销；不区分任务的紧急程度</p>
+<h3 id="（二）优先级调度算法"><a href="#（二）优先级调度算法" class="headerlink" title="（二）优先级调度算法"></a>（二）优先级调度算法</h3><p><strong>算法规则</strong>：每个作业&#x2F;进程都有各自的优先级，调度时先择优先级最高的作业&#x2F;进程</p>
+<p><strong>用于作业&#x2F;进程调度</strong>：都可以，甚至还可以用于 I&#x2F;O 调度中</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114215225.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114215343.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221114215903.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p><strong>优缺点</strong>：用于区分紧急程度、重要程度，适合<strong>实时操作系统</strong>。可灵活地调制对各种作业？进程的偏好程度。但若有源源不断地高优先级进程到来，则<strong>可能导致饥饿</strong>。</p>
+<h3 id="（三）多级反馈队列调度算法"><a href="#（三）多级反馈队列调度算法" class="headerlink" title="（三）多级反馈队列调度算法"></a>（三）多级反馈队列调度算法</h3><p><strong>算法规则</strong>：</p>
+<ol>
+<li>设置多级就绪队列，各级队列优先级从高到低，时间片从小到大，优先级越高，时间片越小</li>
+<li>新进程到达时先进入第一级队列，按 FCFS 原则排队等待分配时间片。若用完时间片进程还未结束，则进程进入下一级队尾，如果此时已经处于最下级的队列，则重新放回该队列队尾</li>
+<li>只有第 k 级队列为空时，才会为 k+1 级队头调度进程分配时间</li>
+</ol>
+<p><strong>用于作业&#x2F;进程调度</strong>：用于进程</p>
+<p><strong>是否可抢占</strong>：抢占式算法。在 k 级队列的进程运行过程中，如果上级队列（1~k-1）中加入了一个新的进程，则由于新进程优先级更高，因此新进程会抢占处理机，原来的进程回到原队列的队尾。</p>
+<p><strong>优缺点</strong>：</p>
+<ul>
+<li>每个进程刚进来时优先级都是最高的，防止第一个队列（FCFS 优点）；</li>
+<li>每个新到达的进程都可以很快得到响应（RR 的优点）；</li>
+<li>短进程只用较少的时间片可以完成（SPF 优点）。而且短进程优先算法需要用户提供进程大概需要运行时间，但有可能会有用户作假，比如长进程虚报短进程，但是这个算法不需要优先估计时间，避免了用户造假。</li>
+<li>可以灵活地调整对各类进程的偏好程度，如 CPU 密集型进程，IO 密集型进程（可将因 IO 阻塞的进程再次唤醒时重新放回原队列，而不必降到下一个队列，从而长期保持较高优先级）；</li>
+<li>但是可能会导致饥饿，因为源源不断有进程到达时，因为最开始都是最高优先级，就会先服务，然后已经降级的线程可能长时间得不到服务。<br><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115091016.png" srcset="/img/loading.gif" lazyload alt="|700"></li>
+</ul>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115091634.png" srcset="/img/loading.gif" lazyload alt="|600"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115092949.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<h2 id="2-3-1-进程同步、进程互斥"><a href="#2-3-1-进程同步、进程互斥" class="headerlink" title="2.3.1 进程同步、进程互斥"></a>2.3.1 进程同步、进程互斥</h2><h3 id="（一）进程同步"><a href="#（一）进程同步" class="headerlink" title="（一）进程同步"></a>（一）进程同步</h3><p><strong>异步性</strong>：各并发执行的进程以各自独立的、不可预知的速度向前推进。老渣约两个女的，但是猜不透女的心思，两个女的想法是各自独立的不可预知的。或者说又两个程序，第二个程序必须要用到第一个程序某几步的计算结果，就得同步，即一前一后的协同合作关系。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115093425.png" srcset="/img/loading.gif" lazyload alt="|500"></p>
+<p>又比如写进程和读进程的管道通信，这两个进程具有异步性，他们是并发执行的，谁发生在前发生在后是不可预知的，但是这种场景中又必须保证写数据发生在前，因为得将管道的写满，读进程才可以读取数据。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116094749.png" srcset="/img/loading.gif" lazyload></p>
+<p>进程同步即用来解决进程异步的问题。同步亦称直接制约关系，是指未完成某种任务而建立的两个或多个进程，这些进程需要在某些位置上协调他们的工作次序而产生的制约关系，这种制约关系就是源于它们之间的相互合作</p>
+<h3 id="（二）进程互斥"><a href="#（二）进程互斥" class="headerlink" title="（二）进程互斥"></a>（二）进程互斥</h3><p>进程的并发需要共享的支持，各个并发执行的进程不可避免地需要共享一些系统资源，如内存、打印机、摄像头等。资源的共享方式分为<strong>互斥共享方式和同时共享方式</strong>。互斥共享即系统中的某些资源可以给多个进程使用，但是一个时间段内只允许一个进程访问资源。同时共享指的是允许一个时间段内多个进程<strong>同时</strong>对资源进程访问，当然这个<strong>同时指的是宏观上的时间</strong>，微观上访问时间很短，交替进行。</p>
+<p>这种资源称为<strong>临界资源</strong>，许多物理设备如摄像头、打印机，还有许多变量、内存缓冲区都属于临界资源。对临界资源的访问，必须互斥地进行。互斥，亦称为间接制约关系。</p>
+<p><strong>进程互斥指</strong>一个进程访问临界资源时，另一个想访问临界资源的进程必须等待，当前访问临界资源的进程结束后，释放该资源后，另一个进程才能去访问临界资源。</p>
+<p>对于临界资源的访问，逻辑上可以分为四个部分：<strong>进入区、临界区、退出区、剩余区</strong>。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116095823.png" srcset="/img/loading.gif" lazyload></p>
+<p>为了实现对临界资源的互斥访问，同时保证系统的整体性能，需要遵循以下原则：</p>
+<ol>
+<li><strong>空闲让进</strong>。</li>
+<li><strong>忙则等待</strong>。当有进程进入临界区时，其他试图进入的进程必须等待。</li>
+<li><strong>有限等待</strong>。对于请求访问的进程，应该在有限时间内进入临界区（防止饥饿）</li>
+<li><strong>让权等待</strong>。进程如果不能进入临界区，就立即释放处理机，防止进程忙等待。忙等待指的是这个进程在等待，没法进行下去了，但是还一直占用着处理机，没有办法给别的进程服务。</li>
+</ol>
+<h2 id="2-3-2-进程互斥的软件方法"><a href="#2-3-2-进程互斥的软件方法" class="headerlink" title="2.3.2 进程互斥的软件方法"></a>2.3.2 进程互斥的软件方法</h2><h3 id="（一）单标志法"><a href="#（一）单标志法" class="headerlink" title="（一）单标志法"></a>（一）单标志法</h3><p><strong>算法思想</strong>：每个进程在访问完临界区后会把临界区的权限转交给另一个进程，也就是说每个进程进入临界区的权限只能被另一个进程赋予。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221115101105.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>缺点</strong>：如果当前允许进入临界区的进程是 p0，但是 p0 没有先访问，就会导致尽管临界区空闲，却不允许 p1 访问。违背了<strong>空闲让进</strong>的原则</p>
+<h3 id="（二）双标志检查法"><a href="#（二）双标志检查法" class="headerlink" title="（二）双标志检查法"></a>（二）双标志检查法</h3><p><strong>算法思想</strong>：这是一个布尔型数组 <code>flag[]</code> ，用来标记各个进程想要进入临界区的意愿，如 <code>flag[0] = true</code> 则表明进程 p0 想进入临界区。每个进程进入临界区前会检查别的进程是否有进入临界区的意愿，如果没有，则将自己的 flag 标志为 true，并且开始访问临界区。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116101236.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>缺点</strong>：但由于进程的并发性，如果 p0 在判断完没人想进入临界区后，将 flag 设置为 true 之前，恰好发生了进程切换，这时 p1 也判断没人想进入临界区，就会也打算把 flag 设置为 true，这样就可能同时有两个进程访问临界资源。违背了 <strong>忙则等待</strong> 的原则。<strong>原因在于进入区的检查和上锁两个处理不是一气呵成的</strong>，可能会被进程切换所打断。</p>
+<h3 id="（三）双标志后检查法"><a href="#（三）双标志后检查法" class="headerlink" title="（三）双标志后检查法"></a>（三）双标志后检查法</h3><p>前一个算法是先检查再上锁，无法一气呵成，因此人们又想到了先上锁后检查的方法，避免无法一气呵成的问题。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116102219.png" srcset="/img/loading.gif" lazyload></p>
+<p>但是如果在设置完 true 之后进行进程切换，就会两边都是 true，然后两边都卡在 while 循环，无法进入临界区。虽然解决了忙则等待的问题，但是又<strong>违背了空闲让进和有限等待</strong>的原则，并且会长期无法访问临界资源而<strong>产生饥饿</strong>现象。<strong>双方都想进入临界区，但是谁也不让谁，最后谁都无法进入。</strong></p>
+<h3 id="（四）Peterson-算法"><a href="#（四）Peterson-算法" class="headerlink" title="（四）Peterson 算法"></a>（四）Peterson 算法</h3><p>如果双方都想进入临界区，可以让进程采取“孔融让梨”的方法，主动让对面进入临界区</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116102854.png" srcset="/img/loading.gif" lazyload></p>
+<p>如果顺序是 1623：首先两边都表示想要进入临界区，然后 p0 表示愿意让 p1 先进，然后 p0 在进入区判断，此时判断结果为 true，则陷入循环。然后进程切换到 p1，p1 表示愿意让 p0 先进，然后 while 循环判断为 true，陷入循环，因为 p1 是最后谦让的，此时进程切换到 p0，<code>flag[1] = true,turn =0</code>，p0 的循环为 false，则 p0 进入临界区。</p>
+<ol>
+<li>主动争取</li>
+<li>主动谦让</li>
+<li>检查对方是否想用，并且最后一次是不是自己说了 “客气话”</li>
+<li>这个算法解决互斥问题，遵循了三个原则，但是<strong>没遵循让权等待</strong>原则，因为 p0 谦让了，即使进入不了临界区，没有立即释放 cpu，而是会让 cpu 处于 while 循环，进入盲等的状态，但是相比之前三个是最好的。</li>
+</ol>
+<h2 id="2-3-3-进程互斥的硬件方法"><a href="#2-3-3-进程互斥的硬件方法" class="headerlink" title="2.3.3 进程互斥的硬件方法"></a>2.3.3 进程互斥的硬件方法</h2><h3 id="（一）中断屏蔽方法"><a href="#（一）中断屏蔽方法" class="headerlink" title="（一）中断屏蔽方法"></a>（一）中断屏蔽方法</h3><p>利用 <code>开/关中断指令实现</code>，与原语的实现思想相同（即进程开始访问临界区到结束访问都不允许中断）。</p>
+<p><strong>缺点</strong>：不适合多处理机，开关中断只对一个核心有用，对于另一个处理机 B 来说他还是会正常的切换进程，如果此时 B 也需要访问临界资源，可能就会冲突。并且开关中断指令权限很大，只适用于内核进程。</p>
+<h3 id="（二）TestAndSet-指令"><a href="#（二）TestAndSet-指令" class="headerlink" title="（二）TestAndSet 指令"></a>（二）TestAndSet 指令</h3><p>检查 TS 指令，也称为 TestAndSetLock 指令，TSL 指令。TSL 是<strong>用硬件实现</strong>的，下面是 C 语言的逻辑描述。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116104520.png" srcset="/img/loading.gif" lazyload></p>
+<p>如果原先 lock 是上锁的，即 true，那么 TestAndSet 就会返回 true，while 循环就会一直下去；如果原先 lock 没有锁， 即 false，TestAndSet 就会将 lock 改为 true，即上锁，并且返回原先没有锁的状态 false，然后 while 循环就退出了，就可以访问临界区的代码段了。</p>
+<p><strong>优点</strong>：相比软件实现方法， TSL 指令把上锁和检查变成了一气呵成的原子操作，实现简单，无需像软件实现方法那样检查是否会有逻辑漏洞，适用于多处理机环境。</p>
+<p><strong>缺点</strong>：不满足让权等待原则，暂时无法进入临界区的进程会占用 CPU 并循环执行 TSL 指令，导致忙等。<br><em>缺点这一块有点不太理解</em></p>
+<p><em>想了一会儿，好像是这样，就是有一个进程已经通过 tsl 指令进入了临界区，但是进程是会切换的。如果是别的方法，进程切换了发现有的人还在访问临界区，就会直接退出，但是这个不一样，他会先进行一个 while 循环判断，但是 while 循环又调用了 TestAndSet 函数，相当于不能进入临界区却在 while 循环盲等，和 Peterson算法一样，但是之前的双标志法也有 while 循环，难道不会盲等吗？</em></p>
+<h3 id="（三）Swap-指令"><a href="#（三）Swap-指令" class="headerlink" title="（三）Swap 指令"></a>（三）Swap 指令</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116110547.png" srcset="/img/loading.gif" lazyload></p>
+<p>基本上和 TSL 差不多，如果进程此时不能进入临界区的话，就i会卡在循环，一直进行检查，处于盲等状态。</p>
+<p><strong>到上面目前为止，所有方案都无法实现让权等待。</strong> 前三种缺点太明显，Peterson 算法和硬件方法后两种都有 while，都会在 while 占用 cpu，造成让权等待。</p>
+<h2 id="2-3-4-信号量机制"><a href="#2-3-4-信号量机制" class="headerlink" title="2.3.4 信号量机制"></a>2.3.4 信号量机制</h2><p>信号量是一种变量（可以是一个整数，也可以是更复杂的记录型变量），用来表示系统中某种资源的数量。</p>
+<p>系统提供一对原语 wait(S) signal(S)，wait 和 signal 常称为 P、V 操作（P、V来自荷兰语），因此常写为 P(S)、V(S)，这对原语可以对信号量进行操作。</p>
+<h3 id="（一）整型信号量"><a href="#（一）整型信号量" class="headerlink" title="（一）整型信号量"></a>（一）整型信号量</h3><p>与普通整数的区别：只能进行初始化、P 操作和 V 操作。</p>
+<p>wait 操作相当于一气呵成地进行了检查和上锁操作。但是进程切换后，别的进程进行 wait 操作，S 已经为 0，就会一直卡在 while 循环，<strong>不满足让权等待，造成忙等</strong>。</p>
+<p><em>但是 wait 是原语，是不可被中断的，是不是意味着 S &#x3D;0 时执行 while 的进程一直不会被切换呢？</em></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116115831.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="（二）记录型信号量"><a href="#（二）记录型信号量" class="headerlink" title="（二）记录型信号量"></a>（二）记录型信号量</h3><p>为了解决忙等问题，人们提出了记录型信号量，用一个记录型的数据结构来表示。通过阻塞<strong>遵循了让权等待的原则</strong>。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116120349.png" srcset="/img/loading.gif" lazyload></p>
+<p>在这里 wait 操作加了个阻塞操作，主动阻塞放弃处理机。当 value– 后小于 0 时，则说明没有多余的资源可以分配给进程了，就将进程阻塞。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116120512.png" srcset="/img/loading.gif" lazyload></p>
+<p>value++ 则释放，此时若 value &lt;&#x3D;0 则表明还有进程正在等待资源，可以调用 wakeup 原语唤醒处于阻塞队列的进程，将其从阻塞队列放回就绪队列，并将刚释放资源分配给它。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116120623.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="2-3-5-信号量机制实现进程互斥、同步、前驱关系"><a href="#2-3-5-信号量机制实现进程互斥、同步、前驱关系" class="headerlink" title="2.3.5 信号量机制实现进程互斥、同步、前驱关系"></a>2.3.5 信号量机制实现进程互斥、同步、前驱关系</h2><h3 id="（一）进程互斥"><a href="#（一）进程互斥" class="headerlink" title="（一）进程互斥"></a>（一）进程互斥</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116121931.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="（二）进程同步"><a href="#（二）进程同步" class="headerlink" title="（二）进程同步"></a>（二）进程同步</h3><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116122347.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="（三）前驱关系"><a href="#（三）前驱关系" class="headerlink" title="（三）前驱关系"></a>（三）前驱关系</h3><p>跟同步关系类似，相当于很多次同步操作，同步关系是某个进程依赖着前面的进程，只是一对的关系。而前驱是一个网状图，有很多对关系。所以也需要很多个同步变量。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116122632.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116122828.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="2-3-6-生产者-消费者问题"><a href="#2-3-6-生产者-消费者问题" class="headerlink" title="2.3.6 生产者-消费者问题"></a>2.3.6 生产者-消费者问题</h2><p>缓冲区是临界资源，各进程必须<strong>互斥的访问</strong>。</p>
+<p>这里面既包含了同步关系又包含了互斥关系。</p>
+<p>同步关系：缓冲区满的时候，生产者需要等消费者消费了才能生产；缓冲区为空的时候，消费者需要生产者生产了才能消费。这是两个不同的一前一后问题，因此需要设置两个同步信号量，需要 “前 v 后p”。假设缓冲区为空，则生产者生产在消费者消费之前，因此在生产者生产之后要加上 v 操作，在前面那个操作之后加上 v 操作；而在后面的操作之前，即消费者消费之前加上 p 操作。因为后面的要等待，p 操作可以将其阻塞了等待，然后后面的依赖前面的，前面的做完了就用 v 操作叫醒后面的。</p>
+<p>实现互斥的操作一定要在实现同步操作之后，否则容易发生死锁。如果在同步操作前，</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116164949.png" srcset="/img/loading.gif" lazyload></p>
+<p>颠倒 p 操作的后果：生产者先占据了缓冲区，但是此时没有空闲缓冲区，于是生产者线程被阻塞，然后切换到消费者进程，消费者进程因为缓冲区被占领，消费者也被阻塞。然后回到生产者，继续阻塞，从而产生了死锁。生产者需要消费者消耗缓冲区，而消费者消耗缓冲区又需要生产者先释放对缓冲区的占用。<strong>因此实现互斥的 P 操作一定要放在实现同步的 P 操作之后。</strong></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116164140.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="2-3-7-多生产者-多消费者问题"><a href="#2-3-7-多生产者-多消费者问题" class="headerlink" title="2.3. 7 多生产者-多消费者问题"></a>2.3. 7 多生产者-多消费者问题</h2><p>有多个生产者，生产的东西不一样；同时有多个消费者，消费的东西也不一样。多，应该理解为<strong>多类</strong>。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116165832.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116172204.png" srcset="/img/loading.gif" lazyload></p>
+<p>如果缓冲区为 1 时，不设置互斥信号量 mutex 也行，在任何时刻 apple、orange、plate 只有一个的值能为 1，然后每个进程最前面都有一个 p 操作，除了正在进行的，其他都会阻塞。当然这也不是绝对的，要具体问题具体分析。</p>
+<p>如果缓冲区大于 1 时，就必须设置一个互斥信号量 mutex 来保证互斥访问缓冲区。因为不设置的话，两个生产者进程肯可能先后访问缓冲区的同一个位置，然后后者的覆盖前者的位置。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116172141.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="2-3-8-吸烟者问题"><a href="#2-3-8-吸烟者问题" class="headerlink" title="2.3.8 吸烟者问题"></a>2.3.8 吸烟者问题</h2><p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116172853.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li>关系分析：两种材料不应该分开看，应该看作组合，则有三种组合。则桌子可以抽象为容量为 1 的缓冲区，要互斥访问，每次可以放一种组合。<ul>
+<li>同步关系：<ul>
+<li>有组合 1 -&gt;第一个抽烟者来取走</li>
+<li>有组合 2 -&gt;第二个抽烟者来取走</li>
+<li>有组合 3 -&gt;第三个抽烟者来取走</li>
+<li>取完卷完烟后发送信号 -&gt; 供应者将下一组合放到桌上</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>根据操作确定 pv 的顺序，要在前面发生的事件发生后执行 v 操作，后面发生的事件发生前执行 p 操作。</li>
+<li>确定信号量的初始值：因为容量为 1，所以可以不用设置互斥信号，这里只考虑同步信号。</li>
+</ol>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116173611.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p>为了让三个吸烟者轮流吸烟，就需要设置一个变量 i。供应者将 P（finish）放在最后面，则是为了等待吸烟者吸完烟，所以吸烟者吸完烟后有个 V（finish），发出完成信号，唤醒发完材料后阻塞的供应者。最开始 finish 为 0，则供应者发完材料后就会被阻塞。这些信号量同一时刻最多只有一个值为 1，不被 P 操作所阻塞，顺利地进入桌子这个临界区。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116173852.png" srcset="/img/loading.gif" lazyload alt="|700"></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116174348.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="2-读者-写者问题"><a href="#2-读者-写者问题" class="headerlink" title="2.  读者-写者问题"></a>2.  读者-写者问题</h2><p>有读者和写者两组并发进程，共享一个文件。与之前不一样，消费者会把缓存区里的东西直接取走，这里的读者只读不改。</p>
+<ul>
+<li>因为读者不会修改文件，所以可以多个读者一起读</li>
+<li>但是写进程不能与其他进程一起</li>
+<li>只允许一个写者往文件中写信息</li>
+<li>写者写操作完成前不允许其他写者和读者工作</li>
+<li>写者写操作执行前，应让已有读者和写者全部退出</li>
+</ul>
+<p> 互斥关系：写进程和写进程、写进程和读进程。因此可以设置一个互斥信号量 rw，写者或读者访问文件前后分别进行 p、v 操作，来进行加锁和解锁，然后读进程之间是可以共存的，所以可以设置一个整数变量 count 来记录当前有几个读进程在访问文件，然后第一个访问的读进程加锁，最后一个访问的读进程解锁，中间的读进程则可以直接进去。</p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116182725.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://images-1310726222.cos.ap-chengdu.myqcloud.com/obsidian-images20221116183153.png" srcset="/img/loading.gif" lazyload></p>
+<p>分析一下第四种情况：首先写者1 进来，过了 pw，prw，然后读者进来，在 pw 的时候卡住，这时写者 2 也进来了，也在 pw 卡住，然后写者 1 运行完了写文件，vrw 释放 rw，vw 释放，然后读者 1 得以进来，然后操作后 vw 释放，之后才轮到写者 2 的 pw 解锁，因此这个是相对公平的，按来的顺序进入，并不是写者优先可以插队。</p>
+<h2 id="2-3-11-管程"><a href="#2-3-11-管程" class="headerlink" title="2.3.11 管程"></a>2.3.11 管程</h2><p>信号量机制存在问题：编写程序困难、易出错</p>
+<p>管程：</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">#操作系统</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>王道操作系统笔记</div>
+      <div>http://example.com/2022/11/11/操作系统/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Shawn Wen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/11/15/Github%20%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" title="Github 搭建博客">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Github 搭建博客</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/03/09/0309%20%E6%8B%86%E5%88%86%E6%96%87%E4%BB%B6%E5%A4%B9%E5%92%8C%E5%90%88%E5%B9%B6/" title="0309 拆分文件夹和合并">
+                        <span class="hidden-mobile">0309 拆分文件夹和合并</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
